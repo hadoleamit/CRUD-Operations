@@ -1,0 +1,17 @@
+{% extends "employee/base.html"%}
+    {% block content %}
+        <form action="" method="POST" autocomplete="off">
+            {% csrf_token %}
+            
+            Full Name      :{{form.fullname}}<br><br>
+            Employee Code  :{{form.emp_code}}<br><br>
+            Mobile         :{{form.mobile}}<br><br>
+            Position       :{{form.position}}<br><br>
+            <button type="submit" class="btn btn-success">Submit</button>
+            <button type="submit" class="btn btn-danger">
+                
+                    <a href="{% url 'employee_list'  %}">Back To Employee List</a>
+                
+            </button>
+        </form>
+    {% endblock content %}

@@ -1,0 +1,17 @@
+{% extends "employee/base.html"%}
+    {% block content %}
+        <p>We will show list of employee from table</p><br>
+        <a href="{% url 'insert_details' %}">Add Details</a><br><br>
+        {% for employee in employee_list %}
+            Full Name:{{employee.fullname}}<br>
+            Code:{{employee.emp_code}}<br>
+            Mobile:{{employee.mobile}}<br>
+            Position:{{employee.position}}<br>
+            <a href="{% url 'employee_update' employee.id %}">
+                Update
+            </a><br>
+            <a href="{% url 'employee_delete' employee.id %}">
+                Delete
+            </a><br><br>
+        {% endfor %}
+    {% endblock content %}
